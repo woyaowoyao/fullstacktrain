@@ -8,29 +8,32 @@ h1 {
 .radius1 {border-radius: 50%;
 	width: 60px;height: 60px;l: 0px;
 	line-height: 0px;ext-align: center;
-	display: inline-block;background: #fceb2e;
+	display: inline-block;background: #348de9;
 	text-decoration: none;
 	color: red;}
+.row {
+		background:#fceb2e;
+	}
 video {
 	border:30px solid #fceb2e;
-	width:600px;
+	width:100%;;
 	height:400px;
 	background:#fceb2e;
 }
 .blue{
-	color: rgb(34, 67, 231);
+	color: rgb(252, 174, 7);
 }
 .progress {
 		margin: auto;
-		width:600px;
-		height:12px;
+		width:100%;;
+		height:18px;
 		margin-bottom: 5px;
 		background-color: #d5f38e;
 }
 progress::-moz-progress-bar { background:#2e52a4; }
 
 #media-play-list {
-	width: 600px;
+	width: 100%;
 	border-top: 1px solid #020815;
 	margin: auto;
 }
