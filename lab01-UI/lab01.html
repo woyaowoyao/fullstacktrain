@@ -2,7 +2,7 @@
 <html lang='en'>
 	<head>
 		<meta charset='utf-8' />
-        <title>HTML5 bootstrapVedio Player</title>
+        <title>IBM FULL STACK TRAINING LAB01-ui-HTML5 bootstrap Vedio Player</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">     
@@ -12,23 +12,28 @@
         <script src="video-player.js"></script>
 	</head>
 <body>
-	<h1>HTML5 bootstrapVedio Player  </h1>
-	<div id='video-player'>
-		<video id='media-video'>
-			<source src='./mov_bbb.mp4' type='video/mp4'>
+	<h1>HTML5 bootstrap Vedio Player  </h1>	
+<div class="container">
+      <div class="row">      
+        <div class=" col-xs-12 col-sm-8 col-md-8" id='video-player'>      
+         
+          <video id='media-video'>
+            <source src='./mov_bbb.mp4' type='video/mp4'>        
         </video>
-
-		<div id='media-controls' style="margin-bottom: 5px;">
-            <button type='button' id='replay-button' class='radius1 btn btn-blue btn-lg ' onclick='replayMedia();'>
+        <div id='media-controls' style="margin-bottom: 5px;">
+            <!-- <button type='button' id='replay-button' class='radius1 btn btn-blue btn-lg ' onclick='replayMedia();'>
                 <em class="blue glyphicon glyphicon-step-backward" ></em></em>
-            </button>	
+            </button>	 -->
             <button type="button" id='play-pause-button' class="radius1 btn btn-blue btn-lg"   onclick='togglePlayPause();'>
                
                 <span id="play-pause-icon" class="blue glyphicon glyphicon-play" ></span></span>
             </button>
-			<button type='button' id='stop-button' class='radius1 btn btn-blue btn-lg' onclick='stopPlayer();'><em class='blue glyphicon glyphicon-stop'></em></button>
-			<button type='button' id='volume-inc-button' class='radius1 btn btn-blue btn-lg' onclick='changeVolume("+");'><em class="blue glyphicon glyphicon-plus"></em></button>
-			<button type='button' id='volume-dec-button' class='radius1 btn btn-blue btn-lg' onclick='changeVolume("-");'><em class="blue glyphicon glyphicon-minus"></em></button>
+            <button type='button' id='stop-button' class='radius1 btn btn-blue btn-lg' onclick='stopPlayer();'>
+                <em class='blue glyphicon glyphicon-stop'></em></button>
+            <button type='button' id='volume-inc-button' class='radius1 btn btn-blue btn-lg' onclick='changeVolume("+");'>
+                <em class="blue glyphicon glyphicon-plus"></em></button>
+            <button type='button' id='volume-dec-button' class='radius1 btn btn-blue btn-lg' onclick='changeVolume("-");'>
+                <em class="blue glyphicon glyphicon-minus"></em></button>
             <button type='button' id='mute-button' class='radius1 btn btn-blue btn-lg' onclick='toggleMute("true");'><em id='mute-icon' class="blue glyphicon glyphicon-headphones"></em>
                 <span id='video-volume' class="badge badge-light" style="display:none;color: lightblue;"></span></button>
             <button type='button' id='like-button' class='radius1 btn btn-blue btn-lg' onclick='likeVideo()'>
@@ -41,13 +46,21 @@
             <div id='progress-bar' class="progress-bar bg-blue progress-bar-success progress-bar-striped active" role="progressbar"
              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
          </div>
-		<div id='media-play-list'>
-			
-            <ul class="list-group list-group-flush">
-                    <li class="list-group-item" onclick='loadVideo("./mov_bbb.mp4");'>video-1</li>                   
-                    <li class="list-group-item" onclick='loadVideo("./2.mp4");'>video-2</li>
-                  </ul>
+		<div >			           
 		</div>
-    </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id='media-play-list'>
+          
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p onclick='loadVideo("./mov_bbb.mp4");'><em class=" radius0 blue glyphicon glyphicon-play" ></em>Introduction to HTML5</p>
+          <p onclick='loadVideo("./2.mp4");'><em class=" radius0 blue glyphicon glyphicon-play" ></em>Introduction to Styling with CSS3</p>
+          <p onclick='loadVideo("./mov_bbb.mp4");'><em class=" radius0 blue glyphicon glyphicon-play" ></em>Introduction to Bootstrap 4</p>
+          <p onclick='loadVideo("./2.mp4");'><em class=" radius0 blue glyphicon glyphicon-play" ></em>Learn to create website with HTML5, CSS3 and Bootstrap4</p>
+          <p onclick='loadVideo("./mov_bbb.mp4");'><em class=" radius0 blue glyphicon glyphicon-play" ></em>Introduction to Javascript</p>
+                
+        </div>
+      </div>   
+  </div>    
 </body>
 </html>
