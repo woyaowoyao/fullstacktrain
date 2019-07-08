@@ -129,7 +129,8 @@ function updateProgressBar() {
     progressBar.setAttribute("style", "width: "+percentage + "%;");
     progressBar.setAttribute("aria-valuenow", percentage);
 	// Update the progress bar's text (for browsers that don't support the progress element)
-	progressBar.innerHTML = percentage + '% ';
+	if(percentage){
+	progressBar.innerHTML = percentage + '% ';}
 }
 
 // Updates a button's title, innerHTML and CSS class to a certain value

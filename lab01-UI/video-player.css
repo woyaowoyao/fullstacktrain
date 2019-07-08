@@ -1,22 +1,22 @@
-
-
-
 h1 { 
 	text-align: center;
 }
-
 #video-player {
     text-align: center;
 	padding:1em 1em .5em;
 }
-
+.radius1 {border-radius: 50%;
+	width: 60px;height: 60px;l: 0px;
+	line-height: 0px;ext-align: center;
+	display: inline-block;background: #fceb2e;
+	text-decoration: none;
+	color: red;}
 video {
 	border:30px solid #fceb2e;
 	width:600px;
 	height:400px;
 	background:#fceb2e;
 }
-
 .blue{
 	color: rgb(34, 67, 231);
 }
@@ -25,7 +25,7 @@ video {
 		width:600px;
 		height:12px;
 		margin-bottom: 5px;
-		background-color: darkseagreen;
+		background-color: #d5f38e;
 }
 progress::-moz-progress-bar { background:#2e52a4; }
 
@@ -44,6 +44,3 @@ progress::-moz-progress-bar { background:#2e52a4; }
 	cursor:pointer;
 	padding-left:15px;
 }
-
-
-
