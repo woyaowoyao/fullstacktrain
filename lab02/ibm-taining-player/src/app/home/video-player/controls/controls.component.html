@@ -1,0 +1,37 @@
+<div id="videoControls">
+  <progress [value]="ratio * 100" max="100"></progress>
+
+  <div class="buttons">
+    <button id="btnReload" class=" radius0 btn" (click)="reload()">
+      <i class=" fas fa-redo"></i>
+    </button>
+
+    <button id="btnPlay" #btnPlay class=" radius0 btn" (click)="play()">
+      <i class=" fas fa-play"></i>
+     
+    </button>
+    <button id="btnPause" #btnPause class=" radius0 btn" disabled (click)="pause()">
+      <i class=" fas fa-pause"></i>
+    </button>
+    <button id="btnStop" #btnStop class=" radius0 btn" disabled (click)="stop()">
+      <i class=" fas fa-stop"></i>
+    </button>
+    <button id="btnVolumeUp" #btnVolumeUp class=" radius0 btn" (click)="volume(0.1)">
+      <i class=" fas fa-plus"></i>
+    </button>
+    <button id="btnVolumeDown" #btnVolumeDown class=" radius0 btn" (click)="volume(-0.1)">
+      <i class=" fas fa-minus"></i>
+    </button>
+    <button id="btnMute" #btnMute class=" radius0 btn" (click)="mute()">
+      <i class="fas" [ngClass]="{ 'fa-volume-up': !muted, 'fa-volume-mute': muted }"></i>
+    </button>
+
+    <button id="btnUnlike" class=" radius2 btn float-right" (click)="vote('down')">
+      <i class=" fas fa-thumbs-down"> {{ unlikes }}</i>
+    </button>
+
+    <button id="btnLike" class=" radius2 btn float-right" (click)="vote('up')">
+      <i class=" fas fa-thumbs-up"> {{ likes }}</i>
+    </button>
+  </div>
+</div>
