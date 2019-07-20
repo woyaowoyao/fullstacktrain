@@ -4,7 +4,6 @@ import { propTypes, defaultProps } from './props'
 import { isEqual } from './utils'
 
 const SEEK_ON_PLAY_EXPIRY = 5000
-
 export default class Player extends Component {
   static displayName = 'Player'
   static propTypes = propTypes
@@ -28,9 +27,7 @@ export default class Player extends Component {
     if (this.isReady) {
       this.player.stop()
     }
-    if (this.player.disablePIP) {
-      this.player.disablePIP()
-    }
+    
     this.mounted = false
   }
   componentWillReceiveProps (nextProps) {
@@ -38,7 +35,7 @@ export default class Player extends Component {
     const { url, playing, volume, muted, playbackRate, pip, loop } = this.props
     if (!isEqual(url, nextProps.url)) {
       if (this.isLoading) {
-        console.warn(`ReactPlayer: the attempt to load ${nextProps.url} is being deferred until the player has loaded`)
+        console.warn(`PlayerContainer: the attempt to load ${nextProps.url} is being deferred until the player has loaded`)
         this.loadOnReady = nextProps.url
         return
       }
@@ -131,7 +128,7 @@ export default class Player extends Component {
       // Convert fraction to seconds based on duration
       const duration = this.player.getDuration()
       if (!duration) {
-        console.warn('ReactPlayer: could not seek using fraction – duration not yet available')
+        console.warn('PlayerContainer: could not seek using fraction – duration not yet available')
         return
       }
       this.player.seekTo(duration * amount)

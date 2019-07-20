@@ -56,8 +56,8 @@ export function getConfig (props, defaultProps, showWarning) {
       const key = p.replace(/Config$/, '')
       config = merge(config, { [key]: props[p] })
       if (showWarning) {
-        const link = 'https://github.com/CookPete/react-player#config-prop'
-        const message = `ReactPlayer: %c${p} %cis deprecated, please use the config prop instead – ${link}`
+        const link = ''
+        const message = `PlayerContainer: %c${p} %cis deprecated, please use the config prop instead – ${link}`
         console.warn(message, 'font-weight: bold', '')
       }
     }
@@ -81,7 +81,7 @@ export function callPlayer (method, ...args) {
   // Util method for calling a method on this.player
   // but guard against errors and console.warn instead
   if (!this.player || !this.player[method]) {
-    let message = `ReactPlayer: ${this.constructor.displayName} player could not call %c${method}%c – `
+    let message = `PlayerContainer: ${this.constructor.displayName} player could not call %c${method}%c – `
     if (!this.player) {
       message += 'The player was not available'
     } else if (!this.player[method]) {

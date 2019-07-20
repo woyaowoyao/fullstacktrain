@@ -4,7 +4,7 @@
   "author":"dong shi lai",
   "homepage": "https://github.com/woyaowoyao/fullstacktrain/tree/master/lab03-react-player",
   "description": "A React component for playing ",
-  "main": "lib/ReactPlayer.js",
+  "main": "lib/PlayerContainer.js",
   "typings": "index.d.ts",
   "scripts": {
     "clean": "rimraf lib demo coverage",

@@ -1,7 +1,7 @@
 {
   "name": "video-player",
   "description": "A React component for playing a variety of URLs",
-  "main": "dist/ReactPlayer.js",
+  "main": "dist/PlayerContainer.js",
   "keywords": [
     "react",
     "media",

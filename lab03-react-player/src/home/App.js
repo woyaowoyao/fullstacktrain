@@ -7,8 +7,7 @@ import './defaults.css'
 import './range.css'
 import './App.css'
 
-//import PlayerContainer from '../PlayerContainer'
-import PlayerContainer from '../conmponets/ReactPlayer'
+import PlayerContainer from '../conmponets/PlayerContainer'
 class App extends Component {
   state = {
     url: null,

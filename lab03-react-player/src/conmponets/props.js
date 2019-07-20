@@ -23,26 +23,6 @@ export const propTypes = {
     shape({ render: func.isRequired })
   ]),
   config: shape({
-    soundcloud: shape({
-      options: object,
-      preload: bool
-    }),
-    youtube: shape({
-      playerVars: object,
-      embedOptions: object,
-      preload: bool
-    }),
-    facebook: shape({
-      appId: string
-    }),
-    dailymotion: shape({
-      params: object,
-      preload: bool
-    }),
-    vimeo: shape({
-      playerOptions: object,
-      preload: bool
-    }),
     file: shape({
       attributes: object,
       tracks: array,
@@ -53,15 +33,6 @@ export const propTypes = {
       hlsOptions: object,
       hlsVersion: string,
       dashVersion: string
-    }),
-    wistia: shape({
-      options: object
-    }),
-    mixcloud: shape({
-      options: object
-    }),
-    twitch: shape({
-      options: object
     })
   }),
   onReady: func,
@@ -72,11 +43,6 @@ export const propTypes = {
   onBufferEnd: func,
   onEnded: func,
   onError: func,
-  onDuration: func,
-  onSeek: func,
-  onProgress: func,
-  onEnablePIP: func,
-  onDisablePIP: func
 }
 
 export const defaultProps = {
@@ -95,47 +61,6 @@ export const defaultProps = {
   light: false,
   wrapper: 'div',
   config: {
-    soundcloud: {
-      options: {
-        visual: true, // Undocumented, but makes player fill container and look better
-        buying: false,
-        liking: false,
-        download: false,
-        sharing: false,
-        show_comments: false,
-        show_playcount: false
-      }
-    },
-    youtube: {
-      playerVars: {
-        playsinline: 1,
-        showinfo: 0,
-        rel: 0,
-        iv_load_policy: 3,
-        modestbranding: 1
-      },
-      embedOptions: {},
-      preload: false
-    },
-    facebook: {
-      appId: '1309697205772819'
-    },
-    dailymotion: {
-      params: {
-        api: 1,
-        'endscreen-enable': false
-      },
-      preload: false
-    },
-    vimeo: {
-      playerOptions: {
-        autopause: false,
-        byline: false,
-        portrait: false,
-        title: false
-      },
-      preload: false
-    },
     file: {
       attributes: {},
       tracks: [],
@@ -146,17 +71,6 @@ export const defaultProps = {
       hlsOptions: {},
       hlsVersion: '0.10.1',
       dashVersion: '2.9.2'
-    },
-    wistia: {
-      options: {}
-    },
-    mixcloud: {
-      options: {
-        hide_cover: 1
-      }
-    },
-    twitch: {
-      options: {}
     }
   },
   onReady: function () {},
@@ -166,20 +80,9 @@ export const defaultProps = {
   onBuffer: function () {},
   onBufferEnd: function () {},
   onEnded: function () {},
-  onError: function () {},
-  onDuration: function () {},
-  onSeek: function () {},
-  onProgress: function () {},
-  onEnablePIP: function () {},
-  onDisablePIP: function () {}
+  onError: function () {}
 }
 
 export const DEPRECATED_CONFIG_PROPS = [
-  'soundcloudConfig',
-  'youtubeConfig',
-  'facebookConfig',
-  'dailymotionConfig',
-  'vimeoConfig',
-  'fileConfig',
-  'wistiaConfig'
+  'fileConfig'
 ]

@@ -171,9 +171,7 @@ export class FilePlayer extends Component {
       this.dash.reset()
     }
   }
-  seekTo (seconds) {
-    this.player.currentTime = seconds
-  }
+ 
   setVolume (fraction) {
     this.player.volume = fraction
   }
