@@ -24,6 +24,7 @@ class App extends Component {
     loaded: 0,
     duration: 0,
     playbackRate: 1.0,
+    playLists:[],
     loop: false
   }
   load = url => {
@@ -33,6 +34,29 @@ class App extends Component {
       loaded: 0,
       pip: false
     })
+  }
+  componentDidMount () {
+    const jsonUrl ='http://localhost:3000/courses?_sort=id&_order=desc';    
+    fetch(jsonUrl,{
+      method:'GET',
+      headers:{
+        'Content-Type':'application/json;charset=UTF-8'
+      },
+      mode:'cors',
+      cache:'default'
+    })
+     .then(res =>res.json())
+     .then((data) => {
+       console.log("fetch data:"+data)  
+       this.setState({
+         playLists:data
+       },function(){
+         console.log(this.state.playLists);    
+       })
+     }) 
+      const message = 'loaded and starting load json data....'
+      console.log(message)
+    
   }
   playPause = () => {
     this.setState({ playing: !this.state.playing })
@@ -97,16 +121,16 @@ class App extends Component {
   }
   renderLoadButton = (url, label) => {
     return (
-      <button onClick={() => this.load(url)}>
-        {label}
-      </button>
+      <a onClick={() => this.load(url)}>
+        {url}
+      </a >
     )
   }
   ref = player => {
     this.player = player
   }
   render () {
-    const { url, playing, controls,  volume, muted,  played, likeCount,unlikeCount, playbackRate } = this.state
+    const { url, playing, controls,  volume, muted,  played, likeCount,unlikeCount, playbackRate,playLists } = this.state
     const SEPARATOR = ' · '
 
     return (
@@ -236,11 +260,11 @@ class App extends Component {
             <tr>
               <th>test</th>
               <td>
-              http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
-              </td>              
-              <td ><div className ='item' >
+              
+              
                 {this.renderLoadButton('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'TestA')}               
-             
+                </td>              
+              <td ><div className ='item' >
               <button onClick={() => this.setState({ url: this.urltInput.value ,title:this.titleInput.value})}>Edit</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button> </div>
@@ -248,12 +272,10 @@ class App extends Component {
             </tr>
             <tr>
               <th>test</th>   
-              <td>
-              http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
-              </td>      
-              <td>
+              <td>                            
                 {this.renderLoadButton('http://vjs.zencdn.net/v/oceans.mp4', 'Test1')}               
-            
+                </td>      
+              <td>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Edit</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button>   
@@ -261,11 +283,10 @@ class App extends Component {
             </tr>
             <tr>
               <th>test</th>    
-              <td>
-              http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4           
-              </td>   
-              <td>
-                {this.renderLoadButton('https://www.w3cschool.cn/statics/demosource/movie.mp4', 'TestB')}                             
+              <td>              
+                {this.renderLoadButton('https://www.w3cschool.cn/statics/demosource/movie.mp4', 'TestB')}   
+                </td>   
+              <td>                          
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Edit</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
               <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button></td>
