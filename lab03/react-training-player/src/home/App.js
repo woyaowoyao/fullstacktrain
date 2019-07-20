@@ -83,13 +83,12 @@ class App extends Component {
     console.log('onPause')
     this.setState({ playing: false })
   }
- 
-  
   onProgress = state => {
     console.log('onProgress', state)
+	this.setState({played: state.played })
     // We only want to update time slider if we are not currently seeking
     //if (!this.state.seeking) {
-      this.setState(state)
+    //  this.setState(state)
     //}
   }
   onEnded = () => {
