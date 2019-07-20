@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import { extract } from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const PORT = 3000
+const PORT = 3001
 const PRODUCTION = process.env.NODE_ENV === 'production'
 const PUBLIC_PATH = PRODUCTION ? '' : `http://localhost:${PORT}/`
 

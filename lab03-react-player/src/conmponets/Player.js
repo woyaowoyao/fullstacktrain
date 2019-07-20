@@ -151,7 +151,7 @@ export default class Player extends Component {
     } else if (playing) {
       this.player.play()
     }
-    this.onDurationCheck()
+    //this.onDurationCheck()
   }
   onPlay = () => {
     this.isPlaying = true
@@ -169,7 +169,7 @@ export default class Player extends Component {
       this.seekTo(this.seekOnPlay)
       this.seekOnPlay = null
     }
-    this.onDurationCheck()
+   // this.onDurationCheck()
   }
   onPause = (e) => {
     this.isPlaying = false
@@ -194,14 +194,14 @@ export default class Player extends Component {
   onDurationCheck = () => {
     clearTimeout(this.durationCheckTimeout)
     const duration = this.getDuration()
-    if (duration) {
-      if (!this.onDurationCalled) {
-        this.props.onDuration(duration)
-        this.onDurationCalled = true
-      }
-    } else {
-      this.durationCheckTimeout = setTimeout(this.onDurationCheck, 100)
-    }
+    // if (duration) {
+    //   if (!this.onDurationCalled) {
+    //     this.props.onDuration(duration)
+    //     this.onDurationCalled = true
+    //   }
+    // } else {
+    //   this.durationCheckTimeout = setTimeout(this.onDurationCheck, 100)
+    // }
   }
   onLoaded = () => {
     // Sometimes we know loading has stopped but onReady/onPlay are never called
