@@ -1,6 +1,6 @@
 install and run<br>
 
-git clone https://github.com/woyaowoyao/fullstacktrain/tree/master/lab03  <br>
+git clone https://github.com/woyaowoyao/fullstacktrain.git <br>
 cd fullstacktasks\lab03
 json-server --watch json-server/db.json
 
