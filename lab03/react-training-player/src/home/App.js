@@ -11,6 +11,7 @@ import PlayerContainer from '../conmponets/PlayerContainer'
 import PlayList from '../conmponets/PlayList'
 class App extends Component {
   state = {
+    id:null,
     url: null,
     title:'video',
     pip: false,
@@ -54,7 +55,7 @@ class App extends Component {
        },function(){
          console.log(this.state.playLists);    
        })
-     }) 
+     })
       const message = 'loaded and starting load json data....'
       console.log(message)
     
@@ -250,10 +251,7 @@ class App extends Component {
                 <button onClick={() =>{
                   playLists.push({url:this.urlInput.value,title:this.titleInput.value}); 
                       this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}
-                      }>
-              
-    
-  
+                      }>              
                   Add Video</button>
               </td>
 
@@ -261,12 +259,12 @@ class App extends Component {
             </tbody></table>
           <table><tbody>
             {playLists.map(palylist =>
-             <tr>
+             <tr key ={palylist.id}>
               <th>{palylist.title}</th>
-              <td><a onClick={() => this.load(palylist.url)}>
+              <td><a title='Click to play the video' onClick={() => this.load(palylist.url)}>
                  {palylist.url}
                </a ></td>
-               <PlayList></PlayList>
+               <PlayList id ={palylist.url}></PlayList>
                </tr>
              )}
       
