@@ -54,7 +54,8 @@ class App extends Component {
     this.setState({ loop: !this.state.loop })
   }
   setVolume = e => {
-    this.setState({ volume: parseFloat(e.target.value) })
+    const val = e.target.value;
+    this.setState({ volume: parseFloat(val) })
   }
   addVolume = e => {
     this.setState({ volume:  this.state.volume +0.1>1?1:this.state.volume +0.1})
@@ -87,9 +88,10 @@ class App extends Component {
   
   onProgress = state => {
     console.log('onProgress', state)
+    this.setState({played: state.played })
     // We only want to update time slider if we are not currently seeking
     //if (!this.state.seeking) {
-      this.setState(state)
+     // this.setState(state)
     //}
   }
   onEnded = () => {

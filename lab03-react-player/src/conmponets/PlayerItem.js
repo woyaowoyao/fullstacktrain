@@ -88,7 +88,8 @@ export class PlayerItem extends Component {
     }
   }
   onSeek = e => {
-    this.props.onSeek(e.target.currentTime)
+    const currentTime = e.target.currentTime;
+    this.props.onSeek(currentTime)
   }
   shouldUseAudio (props) {
     if (props.config.file.forceVideo) {
