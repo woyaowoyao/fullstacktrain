@@ -154,7 +154,7 @@ export default class Player extends Component {
     } else if (playing) {
       this.player.play()
     }
-    this.onDurationCheck()
+   // this.onDurationCheck()
   }
   onPlay = () => {
     this.isPlaying = true
@@ -172,7 +172,7 @@ export default class Player extends Component {
       this.seekTo(this.seekOnPlay)
       this.seekOnPlay = null
     }
-    this.onDurationCheck()
+   // this.onDurationCheck()
   }
   onPause = (e) => {
     this.isPlaying = false
@@ -199,11 +199,11 @@ export default class Player extends Component {
     const duration = this.getDuration()
     if (duration) {
       if (!this.onDurationCalled) {
-        this.props.onDuration(duration)
-        this.onDurationCalled = true
+     //   this.props.onDuration(duration)
+       // this.onDurationCalled = true
       }
     } else {
-      this.durationCheckTimeout = setTimeout(this.onDurationCheck, 100)
+     // this.durationCheckTimeout = setTimeout(this.onDurationCheck, 100)
     }
   }
   onLoaded = () => {

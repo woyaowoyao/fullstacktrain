@@ -4,7 +4,7 @@ $gutter-width: 20px;
 .app {
   margin: auto;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 300;background:#fceb2e;
   text-align: center;
 }
 

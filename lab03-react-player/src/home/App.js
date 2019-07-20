@@ -54,15 +54,19 @@ class App extends Component {
   setVolume = e => {
     this.setState({ volume: parseFloat(e.target.value) })
   }
+  addVolume = e => {
+    this.setState({ volume:  this.state.volume +0.1>1?1:this.state.volume +0.1})
+  }
+  subtractVolume = e => {
+    this.setState({ volume:  this.state.volume-0.1>0?this.state.volume-0.1:0})
+  }
   toggleMuted = () => {
     this.setState({ muted: !this.state.muted })
   }
   setPlaybackRate = e => {
     this.setState({ playbackRate: parseFloat(e.target.value) })
   }
-  togglePIP = () => {
-    this.setState({ pip: !this.state.pip })
-  }
+
   onPlay = () => {
     console.log('onPlay')
     this.setState({ playing: true })
@@ -121,8 +125,7 @@ class App extends Component {
               onBuffer={() => console.log('onBuffer')}              
               onEnded={this.onEnded}
               onError={e => console.log('onError', e)}
-              onProgress={this.onProgress}
-              onDuration={this.onDuration}
+              onProgress={this.onProgress}             
             />
           </div>
 
@@ -130,17 +133,23 @@ class App extends Component {
             <tr>
               <th>Controls</th>
               <td>
-                <button onClick={this.stop}>Stop</button>
-                <button onClick={this.playPause}>{playing ? 'Pause' : 'Play'}</button>              
+                
+                <button  className="radius1" onClick={this.playPause} disabled={playing ? true : false}>
+                 <span id="play-pause-icon" className="blue glyphicon glyphicon-play"></span></button>              
+                <button  className='radius1 btn btn-blue btn-lg'  onClick={this.stop}>
+                <em className='blue glyphicon glyphicon-stop'></em></button>
+
+                <button id='volume-inc-button' className='radius1 btn btn-blue btn-lg' onClick={this.addVolume}>
+                <em className="blue glyphicon glyphicon-plus"></em></button>
+                <button  id='volume-dec-button' className='radius1 btn btn-blue btn-lg' onClick={this.subtractVolume}>
+                <em className="blue glyphicon glyphicon-minus"></em></button>
+
+                <button type='button'  className='radius1 btn btn-blue btn-lg' onClick={this.toggleMuted}>
+                  <em id='mute-icon' className="blue glyphicon glyphicon-headphones"></em>
+                </button>
               </td>
             </tr>            
-            
-            <tr>
-              <th>Volume</th>
-              <td>
-                <input type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
-              </td>
-            </tr>          
+                   
             <tr>
               <th>
                 <label htmlFor='muted'>Muted</label>
