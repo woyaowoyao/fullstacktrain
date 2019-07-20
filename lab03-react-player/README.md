@@ -1,6 +1,6 @@
-install and run
-cd fullstacktasks\lab03-react-player
-npm install
-npm start
-open browser:
-http://localhost:3000/
+install and run<br>
+cd fullstacktasks\lab03-react-player <br>
+npm install <br>
+npm start <br>
+open browser:<br>
+http://localhost:3000/<br>
