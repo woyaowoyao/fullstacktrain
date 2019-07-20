@@ -1,30 +1,15 @@
 {
-  "name": "react-player",
-  "description": "A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion",
+  "name": "video-player",
+  "description": "A React component for playing a variety of URLs",
   "main": "dist/ReactPlayer.js",
-  "authors": [
-    "Pete Cook <pete@cookpete.com> (http://github.com/cookpete)"
-  ],
-  "license": "MIT",
   "keywords": [
     "react",
     "media",
     "player",
     "video",
-    "audio",
-    "youtube",
-    "facebook",
-    "twitch",
-    "soundcloud",
-    "streamable",
-    "vimeo",
-    "wistia",
-    "dailymotion",
-    "hls",
-    "dash",
     "react-component"
   ],
-  "homepage": "https://github.com/CookPete/react-player",
+  "homepage": "https://github.com/woyaowoyao/fullstacktrain/tree/master/lab03-react-player",
   "moduleType": [
     "globals"
   ],
