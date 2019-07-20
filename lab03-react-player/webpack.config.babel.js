@@ -7,7 +7,7 @@ const PORT = 3000
 const PRODUCTION = process.env.NODE_ENV === 'production'
 const PUBLIC_PATH = PRODUCTION ? '' : `http://localhost:${PORT}/`
 
-const PATH_DEMO = join(__dirname, 'demo')
+const PATH_DEMO = join(__dirname, 'home')
 const PATH_SRC = join(__dirname, 'src')
 const PATH_INDEX = join(__dirname, 'index.html')
 const PATH_TESTS = join(__dirname, 'test', 'specs')
@@ -27,7 +27,7 @@ export default {
   entry: [
     `webpack-dev-server/client?http://localhost:${PORT}`,
     'webpack/hot/only-dev-server',
-    './src/demo/index'
+    './src/home/index'
   ],
   module: {
     rules: [
