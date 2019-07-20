@@ -2,35 +2,35 @@
   "courses": [
     {
       "id": 0,
-      "title": "Introduction to HTML5",
-      "url": "http://vjs.zencdn.net/v/oceans.mp4",
+      "title": "HTML5",
+      "url": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
       "duration": "0:13",
       "approved": true
     },
     {
       "id": 1,
-      "title": "Introduction to Styling with CSS3",
+      "title": "CSS3",
       "url": "https://www.w3cschool.cn/statics/demosource/movie.mp4",
       "duration": "0:18",
       "approved": true
     },
     {
       "id": 2,
-      "title": "Introduction to Bootstrap 4",
+      "title": "Java",
       "url": "http://vjs.zencdn.net/v/oceans.mp4",
       "duration": "0:13",
       "approved": true
     },
     {
       "id": 3,
-      "title": "Learn to create website with HTML5, CSS3 and Bootstrap4",
+      "title": "Bootstrap4",
       "url": "https://www.w3cschool.cn/statics/demosource/movie.mp4",
       "duration": "0:18",
       "approved": true
     },
     {
       "id": 4,
-      "title": "Introduction to Javascript",
+      "title": "Javascript",
       "url": "http://vjs.zencdn.net/v/oceans.mp4",
       "duration": "0:13",
       "approved": false

@@ -8,6 +8,7 @@ import './range.css'
 import './App.css'
 
 import PlayerContainer from '../conmponets/PlayerContainer'
+import PlayList from '../conmponets/PlayList'
 class App extends Component {
   state = {
     url: null,
@@ -119,6 +120,13 @@ class App extends Component {
     console.log('onEnded')
     this.setState({ playing: this.state.loop })
   }
+  addPlayList = (url, label) => {
+    playLists.push({url:url,title:label});
+    this.setState({ url:url,
+      title:label,
+      playLists:this.playLists})
+    
+  }
   renderLoadButton = (url, label) => {
     return (
       <a onClick={() => this.load(url)}>
@@ -195,8 +203,6 @@ class App extends Component {
             </tr>          
           </tbody></table>
         </section>
-     
-        
         <section className='section'>             
           <table><tbody>                                             
             <tr>
@@ -240,51 +246,30 @@ class App extends Component {
               <td>
               <input ref={input => { this.titleInput = input }} type='text' placeholder='Enter Title' />
                 <input ref={input => { this.urlInput = input }} type='text' placeholder='Enter URL' />               
-                <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>
+                {/* <button onClick={addPlayList( this.urlInput.value,this.titleInput.value)}> */}
+                <button onClick={() =>{
+                  playLists.push({url:this.urlInput.value,title:this.titleInput.value}); 
+                      this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}
+                      }>
+              
+    
+  
                   Add Video</button>
               </td>
 
-            </tr>
-          
-            <tr>
-              <th>test</th>
-              <td>              
-                {this.renderLoadButton('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'TestA')}               
-                </td>              
-              <td >
-              <div className ='item' >
-              <button onClick={() => this.setState()}>Edit</button>
-              <button onClick={() => this.setState()}>Delete</button>
-              <button onClick={() => this.setState()}>Approve</button> 
-              </div>
-              </td>
-            </tr>
-            <tr>
-              <th>test</th>   
-              <td>                            
-                {this.renderLoadButton('http://vjs.zencdn.net/v/oceans.mp4', 'Test1')}               
-                </td>      
-                <td >
-              <div className ='item' >
-              <button onClick={() => this.setState()}>Edit</button>
-              <button onClick={() => this.setState()}>Delete</button>
-              <button onClick={() => this.setState()}>Approve</button> 
-              </div>
-              </td> 
-            </tr>
-            <tr>
-              <th>test</th>    
-              <td>              
-                {this.renderLoadButton('https://www.w3cschool.cn/statics/demosource/movie.mp4', 'TestB')}   
-                </td>   
-                <td >
-              <div className ='item' >
-              <button onClick={() => this.setState()}>Edit</button>
-              <button onClick={() => this.setState()}>Delete</button>
-              <button onClick={() => this.setState()}>Approve</button> 
-              </div>
-              </td>
-            </tr>
+            </tr>          
+            </tbody></table>
+          <table><tbody>
+            {playLists.map(palylist =>
+             <tr>
+              <th>{palylist.title}</th>
+              <td><a onClick={() => this.load(palylist.url)}>
+                 {palylist.url}
+               </a ></td>
+               <PlayList></PlayList>
+               </tr>
+             )}
+      
           </tbody></table>
           <table><tbody>
             <tr>
