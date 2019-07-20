@@ -38,7 +38,7 @@ class App extends Component {
     })
   }
   componentDidMount () {
-    const jsonUrl ='http://localhost:3000/courses?_sort=id&_order=desc';    
+    const jsonUrl ='http://localhost:3000/courses?_sort=id&_order=asc';    
     fetch(jsonUrl,{
       method:'GET',
       headers:{
@@ -49,7 +49,7 @@ class App extends Component {
     })
      .then(res =>res.json())
      .then((data) => {
-       console.log("fetch data:"+data)  
+      console.log("result data:"+JSON.stringify(data)) 
        this.setState({
          playLists:data
        },function(){
@@ -141,7 +141,7 @@ class App extends Component {
   render () {
     const { url, playing, controls,  volume, muted,  played, likeCount,unlikeCount, playbackRate,playLists } = this.state
     const SEPARATOR = ' · '
-
+    const editUrl1 ='http://localhost:3000/courses'; 
     return (
       <div className='app'>
         <section className='section'>
@@ -249,8 +249,37 @@ class App extends Component {
                 <input ref={input => { this.urlInput = input }} type='text' placeholder='Enter URL' />               
                 {/* <button onClick={addPlayList( this.urlInput.value,this.titleInput.value)}> */}
                 <button onClick={() =>{
+                   if( this.urlInput.value!=""){
+                    var reg=/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+                    if(!reg.test(this.urlInput.value)){
+                      alert("Please input validate Url!");
+                        return false;
+                    }
+                    //return true;
+                  }else{
+                    alert("URL is EMPTY.Please input validate Url!");
+                   return false;
+                  }
                   playLists.push({url:this.urlInput.value,title:this.titleInput.value}); 
-                      this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}
+                  this.setState({ url: this.urlInput.value, title:this.titleInput.value})
+                        
+    fetch(editUrl1,{
+      method:'POST',
+      body:JSON.stringify({ url: this.urlInput.value, title:this.titleInput.value}),
+      headers:{
+        'Content-Type':'application/json;charset=UTF-8'
+      },
+      mode:'cors',
+      cache:'default'
+    })
+     .then(res =>res.json())
+     .then((data) => {
+      console.log("result data:"+JSON.stringify(data))    
+     })
+      const message = 'delete json data....'
+      console.log(message)        
+  }
+                    
                       }>              
                   Add Video</button>
               </td>
@@ -264,7 +293,9 @@ class App extends Component {
               <td><a title='Click to play the video' onClick={() => this.load(palylist.url)}>
                  {palylist.url}
                </a ></td>
-               <PlayList id ={palylist.url}></PlayList>
+               <PlayList id ={palylist.id}
+               url ={palylist.url}
+               title ={palylist.title}></PlayList>
                </tr>
              )}
       
