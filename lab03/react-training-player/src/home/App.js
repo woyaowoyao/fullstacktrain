@@ -58,7 +58,6 @@ class App extends Component {
      })
       const message = 'loaded and starting load json data....'
       console.log(message)
-    
   }
   playPause = () => {
     this.setState({ playing: !this.state.playing })
@@ -170,12 +169,10 @@ class App extends Component {
               onProgress={this.onProgress}             
             />
           </div>
-
           <table><tbody>
             <tr>
               <th>.</th>
-              <td>
-                
+              <td>                
                 <button  className="radius1 btn btn-blue btn-lg" onClick={this.playPause} disabled={playing ? true : false}>
                  <span id="play-pause-icon" className="blue glyphicon glyphicon-play"></span></button>              
                 <button  className='radius1 btn btn-blue btn-lg'  onClick={this.stop}>
@@ -294,7 +291,8 @@ class App extends Component {
                  {palylist.url}
                </a ></td>
                <PlayList id ={palylist.id}
-               url ={palylist.url}
+               url ={palylist.url} 
+               approved={palylist.approved} 
                title ={palylist.title}></PlayList>
                </tr>
              )}

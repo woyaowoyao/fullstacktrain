@@ -64,12 +64,13 @@ export default class PlayList extends Component {
     const id = this.props.id;
     const url = this.props.url;
     const title = this.props.title;
+    const approved = this.props.approved;
     return (
               // <div className ='item' >
               <td  className ='item'>
               <button onClick={() => this.edit(id,url,title)}>Edit</button>
               <button onClick={() => this.delete(id,url,title)}>Delete</button>
-              <button onClick={() => this.approve(id,url,title)}>Approve</button>              
+              <button title={approved ? 'Disabled(Had Approved)' : 'You can approve.'} className ={approved ? 'gray' : 'blue'} disabled={approved ? true : false} onClick={() => this.approve(id,url,title)}>Approve</button>              
               </td>
     )
   }
