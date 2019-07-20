@@ -13,39 +13,6 @@ export interface TrackProps {
   default?: boolean;
 }
 
-export interface SoundCloudConfig {
-  options?: Object;
-  preload?: boolean;
-}
-
-export interface YouTubeConfig {
-  playerVars?: Object;
-  embedOptions?: Object;
-  preload?: boolean;
-}
-
-export interface FacebookConfig {
-  appId: string;
-}
-
-export interface DailyMotionConfig {
-  params?: Object;
-  preload?: boolean;
-}
-
-export interface VimeoConfig {
-  playerOptions?: Object;
-  preload?: boolean;
-}
-
-export interface WistiaConfig {
-  options?: Object;
-}
-
-export interface MixcloudConfig {
-  options?: Object;
-}
-
 export interface FileConfig {
   attributes?: Object;
   tracks?: TrackProps[];
@@ -86,13 +53,7 @@ export interface ReactPlayerProps {
   light?: boolean | string;
   wrapper?: any;
   config?: Config;
-  soundcloudConfig?: SoundCloudConfig;
-  youtubeConfig?: YouTubeConfig;
-  facebookConfig?: FacebookConfig;
-  dailymotionConfig?: DailyMotionConfig;
-  vimeoConfig?: VimeoConfig;
   fileConfig?: FileConfig;
-  wistiaConfig?: WistiaConfig;
   onReady?(): void;
   onStart?(): void;
   onPlay?(): void;
