@@ -1,6 +1,6 @@
 
-import { FilePlayer } from './FilePlayer'
+import { PlayerItem } from './PlayerItem'
 
 export default [
-  FilePlayer
+  PlayerItem
 ]

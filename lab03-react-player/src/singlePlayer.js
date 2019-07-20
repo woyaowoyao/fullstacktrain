@@ -6,8 +6,8 @@ import Player from './Player'
 
 const SUPPORTED_PROPS = Object.keys(propTypes)
 
-export default function createSinglePlayer (activePlayer) {
-  return class SinglePlayer extends Component {
+export default function createControls (activePlayer) {
+  return class Controls extends Component {
     static displayName = `${activePlayer.displayName}Player`
     static propTypes = propTypes
     static defaultProps = defaultProps
