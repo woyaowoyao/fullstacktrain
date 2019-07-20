@@ -1,4 +1,5 @@
 install and run<br>
+git clone https://github.com/woyaowoyao/fullstacktrain/tree/master/lab03-react-player
 cd fullstacktasks\lab03-react-player <br>
 npm install <br>
 npm start <br>

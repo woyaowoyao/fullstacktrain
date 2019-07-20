@@ -1,6 +1,8 @@
 {
   "name": "video-player",
   "version": "1.0.0",
+  "author":"dong shi lai",
+  "homepage": "https://github.com/woyaowoyao/fullstacktrain/tree/master/lab03-react-player",
   "description": "A React component for playing ",
   "main": "lib/ReactPlayer.js",
   "typings": "index.d.ts",
