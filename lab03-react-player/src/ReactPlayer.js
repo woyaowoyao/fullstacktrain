@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 
 import { propTypes, defaultProps, DEPRECATED_CONFIG_PROPS } from './props'
 import { getConfig, omit, isEqual } from './utils'
-import players from './players'
 import Player from './Player'
-import Preview from './Preview'
 import { FilePlayer } from './players/FilePlayer'
-import renderPreloadPlayers from './preload'
 
 const SUPPORTED_PROPS = Object.keys(propTypes)
 
@@ -23,24 +20,21 @@ export default class ReactPlayer extends Component {
   static propTypes = propTypes
   static defaultProps = defaultProps
   static canPlay = url => {
-    for (let Player of [ ...customPlayers, ...players ]) {
+    for (let Player of [ ...customPlayers ]) {
       if (Player.canPlay(url)) {
         return true
       }
     }
     return false
   }
-  static canEnablePIP = url => {
  
-    return false
-  }
   config = getConfig(this.props, defaultProps, true)
   state = {
     showPreview: !!this.props.light
   }
   componentDidMount () {
     if (this.props.progressFrequency) {
-      const message = 'ReactPlayer: %cprogressFrequency%c is deprecated, please use %cprogressInterval%c instead'
+      const message = 'progress....'
       console.warn(message, 'font-weight: bold', '', 'font-weight: bold', '')
     }
   }
@@ -80,12 +74,7 @@ export default class ReactPlayer extends Component {
     this.props.onReady(this)
   }
   getActivePlayer (url) {
-    for (let Player of [ ...customPlayers, ...players ]) {
-      if (Player.canPlay(url)) {
-        return Player
-      }
-    }
-    // Fall back to FilePlayer if nothing else can play the URL
+   
     return FilePlayer
   }
   wrapperRef = wrapper => {
@@ -108,7 +97,7 @@ export default class ReactPlayer extends Component {
     )
   }
   sortPlayers (a, b) {
-    // Retain player order to prevent weird iframe behaviour when switching players
+    
     if (a && b) {
       return a.key < b.key ? -1 : 1
     }
@@ -125,7 +114,7 @@ export default class ReactPlayer extends Component {
    // const preview = <Preview url={url} light={light} onClick={this.onClickPreview} />
     return (
       <Wrapper ref={this.wrapperRef} style={{ ...style, width, height }} {...otherProps}>
-        {showPreview ? players : players}
+        {players}
       </Wrapper>
     )
   }

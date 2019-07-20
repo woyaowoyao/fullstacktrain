@@ -37,14 +37,12 @@ function canPlay (url) {
   )
 }
 
-function canEnablePIP (url) {
-  return canPlay(url) && !!document.pictureInPictureEnabled && !AUDIO_EXTENSIONS.test(url)
-}
+
 
 export class FilePlayer extends Component {
   static displayName = 'FilePlayer'
   static canPlay = canPlay
-  static canEnablePIP = canEnablePIP
+  
 
   componentDidMount () {
     this.addListeners()
