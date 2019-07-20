@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
 
-import { getSDK, isMediaStream } from './utils'
-import createSinglePlayer from './Controls'
+import {  isMediaStream } from './utils'
+import createPlayer from './Controls'
 
 const IOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
-const AUDIO_EXTENSIONS = /\.(m4a|mp4a|mpga|mp2|mp2a|mp3|m2a|m3a|wav|weba|aac|oga|spx)($|\?)/i
 const VIDEO_EXTENSIONS = /\.(mp4|og[gv]|webm|mov|m4v)($|\?)/i
-const HLS_EXTENSIONS = /\.(m3u8)($|\?)/i
-const HLS_SDK_URL = 'https://cdnjs.cloudflare.com/ajax/libs/hls.js/VERSION/hls.min.js'
-const HLS_GLOBAL = 'Hls'
-const DASH_EXTENSIONS = /\.(mpd)($|\?)/i
-const DASH_SDK_URL = 'https://cdnjs.cloudflare.com/ajax/libs/dashjs/VERSION/dash.all.min.js'
-const DASH_GLOBAL = 'dashjs'
-const MATCH_DROPBOX_URL = /www\.dropbox\.com\/.+/
 
 function canPlay (url) {
   if (url instanceof Array) {
@@ -29,21 +21,15 @@ function canPlay (url) {
   if (isMediaStream(url)) {
     return true
   }
-  return (
-    AUDIO_EXTENSIONS.test(url) ||
-    VIDEO_EXTENSIONS.test(url) ||
-    HLS_EXTENSIONS.test(url) ||
-    DASH_EXTENSIONS.test(url)
+  return (    
+    VIDEO_EXTENSIONS.test(url)   
   )
 }
-
-
 
 export class PlayerItem extends Component {
   static displayName = 'PlayerItem'
   static canPlay = canPlay
   
-
   componentDidMount () {
     this.addListeners()
     if (IOS) {
@@ -111,39 +97,17 @@ export class PlayerItem extends Component {
     if (props.config.file.attributes.poster) {
       return false // Use <video> so that poster is shown
     }
-    return AUDIO_EXTENSIONS.test(props.url) || props.config.file.forceAudio
+    return  props.config.file.forceAudio
   }
   shouldUseHLS (url) {
-    return (HLS_EXTENSIONS.test(url) && !IOS) || this.props.config.file.forceHLS
+    return false
   }
   shouldUseDASH (url) {
-    return DASH_EXTENSIONS.test(url) || this.props.config.file.forceDASH
+    return false
   }
   load (url) {
     const { hlsVersion, dashVersion } = this.props.config.file
-    if (this.shouldUseHLS(url)) {
-      getSDK(HLS_SDK_URL.replace('VERSION', hlsVersion), HLS_GLOBAL).then(Hls => {
-        this.hls = new Hls(this.props.config.file.hlsOptions)
-        this.hls.on(Hls.Events.ERROR, (e, data) => {
-          this.props.onError(e, data, this.hls, Hls)
-        })
-        this.hls.loadSource(url)
-        this.hls.attachMedia(this.player)
-      })
-    }
-    if (this.shouldUseDASH(url)) {
-      getSDK(DASH_SDK_URL.replace('VERSION', dashVersion), DASH_GLOBAL).then(dashjs => {
-        this.dash = dashjs.MediaPlayer().create()
-        this.dash.initialize(this.player, url, this.props.playing)
-        this.dash.getDebug().setLogToBrowserConsole(false)
-      })
-    }
-
     if (url instanceof Array) {
-      // When setting new urls (<source>) on an already loaded video,
-      // HTMLMediaElement.load() is needed to reset the media element
-      // and restart the media resource. Just replacing children source
-      // dom nodes is not enough
       this.player.load()
     } else if (isMediaStream(url)) {
       try {
@@ -270,4 +234,4 @@ export class PlayerItem extends Component {
   }
 }
 
-export default createSinglePlayer(PlayerItem)
+export default createPlayer(PlayerItem)

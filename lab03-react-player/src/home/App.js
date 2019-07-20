@@ -11,6 +11,7 @@ import PlayerContainer from '../conmponets/PlayerContainer'
 class App extends Component {
   state = {
     url: null,
+    title:'video',
     pip: false,
     playing: true,
     controls: false,
@@ -174,14 +175,13 @@ class App extends Component {
             <tr>
               <th>Add new Video URL</th>
               <td>
-                <input ref={input => { this.urlInput = input }} type='text' placeholder='Enter URL' />
-                <button onClick={() => this.setState({ url: this.urlInput.value })}>Load</button>
+              <input ref={input => { this.titleInput = input }} type='text' placeholder='Enter Title' />
+                <input ref={input => { this.urlInput = input }} type='text' placeholder='Enter URL' />               
+                <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Add</button>
               </td>
+
             </tr>
           </tbody></table>
-
-      
-
           <table><tbody>
             <tr>
               <th>url:</th>
@@ -189,13 +189,8 @@ class App extends Component {
                 {(url instanceof Array ? 'Multiple' : url) || '-'}
               </td>
             </tr>
-
-            
           </tbody></table>
-        </section>
-        <footer className='footer'>
-         training
-        </footer>
+        </section>       
       </div>
     )
   }
