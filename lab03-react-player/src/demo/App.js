@@ -67,14 +67,6 @@ class App extends Component {
     console.log('onPlay')
     this.setState({ playing: true })
   }
-  onEnablePIP = () => {
-    console.log('onEnablePIP')
-    this.setState({ pip: true })
-  }
-  onDisablePIP = () => {
-    console.log('onDisablePIP')
-    this.setState({ pip: false })
-  }
   onPause = () => {
     console.log('onPause')
     this.setState({ playing: false })
@@ -109,7 +101,7 @@ class App extends Component {
     return (
       <div className='app'>
         <section className='section'>
-          <h1>Video Player Demo</h1>
+          <h1>Video Player </h1>
           <div className='player-wrapper'>
             <PlayerContainer
               ref={this.ref}
@@ -173,11 +165,12 @@ class App extends Component {
                 {this.renderLoadButton('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'TestA')}               
               </td>
               <td>
-                {this.renderLoadButton('https://home.wistia.com/medias/e4a27b971d', 'TestB')}               
+                {this.renderLoadButton('http://vjs.zencdn.net/v/oceans.mp4', 'Test1')}               
               </td>
-              <td>              
-                {this.renderLoadButton('https://home.wistia.com/medias/29b0fbf547', 'TestC')}
+              <td>
+                {this.renderLoadButton('https://www.w3cschool.cn/statics/demosource/movie.mp4', 'TestB')}               
               </td>
+             
             </tr>
             <tr>
               <th>Add new Video URL</th>

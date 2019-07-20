@@ -19,7 +19,7 @@ export default class ReactPlayer extends Component {
   static removeCustomPlayers = () => {
     customPlayers = []
   }
-  static displayName = 'ReactPlayer'
+  static displayName = 'Video-Player'
   static propTypes = propTypes
   static defaultProps = defaultProps
   static canPlay = url => {
