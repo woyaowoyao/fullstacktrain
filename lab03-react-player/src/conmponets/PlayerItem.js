@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { getSDK, isMediaStream } from './utils'
-import createControls from './Controls'
+import createSinglePlayer from './Controls'
 
 const IOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
 const AUDIO_EXTENSIONS = /\.(m4a|mp4a|mpga|mp2|mp2a|mp3|m2a|m3a|wav|weba|aac|oga|spx)($|\?)/i
@@ -12,7 +12,7 @@ const HLS_GLOBAL = 'Hls'
 const DASH_EXTENSIONS = /\.(mpd)($|\?)/i
 const DASH_SDK_URL = 'https://cdnjs.cloudflare.com/ajax/libs/dashjs/VERSION/dash.all.min.js'
 const DASH_GLOBAL = 'dashjs'
-
+const MATCH_DROPBOX_URL = /www\.dropbox\.com\/.+/
 
 function canPlay (url) {
   if (url instanceof Array) {
@@ -270,4 +270,4 @@ export class PlayerItem extends Component {
   }
 }
 
-export default createControls(PlayerItem)
+export default createSinglePlayer(PlayerItem)
