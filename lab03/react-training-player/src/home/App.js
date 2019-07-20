@@ -189,17 +189,6 @@ class App extends Component {
                </button>
               </td>
             </tr>            
-                   
-            {/* <tr>
-              <th>
-                <label htmlFor='muted'>Muted</label>
-              </th>
-              <td>
-                <input id='muted' type='checkbox' checked={muted} onChange={this.toggleMuted} />
-              </td>
-            </tr> */}
-           
-        
             <tr>
               <th>progress</th>
               <td><progress max={1} value={played} /></td>
@@ -259,15 +248,15 @@ class App extends Component {
           
             <tr>
               <th>test</th>
-              <td>
-              
-              
+              <td>              
                 {this.renderLoadButton('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'TestA')}               
                 </td>              
-              <td ><div className ='item' >
-              <button onClick={() => this.setState({ url: this.urltInput.value ,title:this.titleInput.value})}>Edit</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button> </div>
+              <td >
+              <div className ='item' >
+              <button onClick={() => this.setState()}>Edit</button>
+              <button onClick={() => this.setState()}>Delete</button>
+              <button onClick={() => this.setState()}>Approve</button> 
+              </div>
               </td>
             </tr>
             <tr>
@@ -275,21 +264,26 @@ class App extends Component {
               <td>                            
                 {this.renderLoadButton('http://vjs.zencdn.net/v/oceans.mp4', 'Test1')}               
                 </td>      
-              <td>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Edit</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button>   
-              </td>     
+                <td >
+              <div className ='item' >
+              <button onClick={() => this.setState()}>Edit</button>
+              <button onClick={() => this.setState()}>Delete</button>
+              <button onClick={() => this.setState()}>Approve</button> 
+              </div>
+              </td> 
             </tr>
             <tr>
               <th>test</th>    
               <td>              
                 {this.renderLoadButton('https://www.w3cschool.cn/statics/demosource/movie.mp4', 'TestB')}   
                 </td>   
-              <td>                          
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Edit</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Delete</button>
-              <button onClick={() => this.setState({ url: this.urlInput.value ,title:this.titleInput.value})}>Approve</button></td>
+                <td >
+              <div className ='item' >
+              <button onClick={() => this.setState()}>Edit</button>
+              <button onClick={() => this.setState()}>Delete</button>
+              <button onClick={() => this.setState()}>Approve</button> 
+              </div>
+              </td>
             </tr>
           </tbody></table>
           <table><tbody>
