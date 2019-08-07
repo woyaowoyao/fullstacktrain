@@ -1,8 +1,7 @@
 
 ## Run
 
-```sh
-git clone 
+git clone  https://github.com/woyaowoyao/fullstacktrain.git
 cd FSD/lab04_salary
 mvn clean package
 java -cp ./target/*.jar laidongs.lab04.SalaryLab04
@@ -16,41 +15,39 @@ $ java -cp ./target/*.jar laidongs.lab04.SalaryLab04
 Salary Income Predictor
 =================================================
 
-Input starting salary: 2000.55
-Input increment in percent: 10.25
-Input increment received frequency: 2
-Input deductions on income: 666.77
-Input deductions received frequency: 2
+Input starting salary: 2019
+Input increment in percent: 10
+Input increment received frequency: 4
+Input deductions on income: 2
+Input deductions received frequency: 1
 Input prediction years: 5
 
 --------------------------------------------------------------
 a. Increment Report
 
 Year  |  Starting Salary |  # of Increments |  Increment % | Increment Amount
-1     |          2000.55 |                2 |        10.25 |           431.13
-2     |          2431.68 |                2 |        10.25 |           524.04
-3     |          2955.72 |                2 |        10.25 |           636.98
-4     |           3592.7 |                2 |        10.25 |           774.25
-5     |          4366.95 |                2 |        10.25 |            941.1
+1     |           2019.0 |                4 |         10.0 |           937.02
+2     |          2956.02 |                4 |         10.0 |          1371.89
+3     |          4327.91 |                4 |         10.0 |          2008.58
+4     |          6336.49 |                4 |         10.0 |          2940.76
+5     |          9277.25 |                4 |         10.0 |          4305.57
 
 --------------------------------------------------------------
 b. Deduction Report
 
 Year  |  Starting Salary |  # of Deductions |  Deduction % | Deduction Amount
-1     |          2000.55 |                2 |        66.66 |          1333.54
-2     |           667.01 |                2 |       199.93 |          1333.54
-3     |          -666.53 |                2 |      -200.07 |          1333.54
-4     |         -2000.07 |                2 |       -66.67 |          1333.54
-5     |         -3333.61 |                2 |        -40.0 |          1333.54
+1     |           2019.0 |                1 |          0.1 |              2.0
+2     |           2017.0 |                1 |          0.1 |              2.0
+3     |           2015.0 |                1 |          0.1 |              2.0
+4     |           2013.0 |                1 |          0.1 |              2.0
+5     |           2011.0 |                1 |          0.1 |              2.0
 
 --------------------------------------------------------------
 c. Prediction
 
 Year  |  Starting Salary | Increment Amount | Deduction Amount |    Salary Growth
-1     |          2000.55 |           431.13 |          1333.54 |          -902.41
-2     |          1098.14 |           524.04 |          1333.54 |           -809.5
-3     |           288.64 |           636.98 |          1333.54 |          -696.56
-4     |              0.0 |              0.0 |              0.0 |              0.0
-```
-
-## References
+1     |           2019.0 |           937.02 |              2.0 |           935.02
+2     |          2954.02 |          1371.89 |              2.0 |          1369.89
+3     |          4323.91 |          2008.58 |              2.0 |          2006.58
+4     |          6330.49 |          2940.76 |              2.0 |          2938.76
+5     |          9269.25 |          4305.57 |              2.0 |          4303.57
