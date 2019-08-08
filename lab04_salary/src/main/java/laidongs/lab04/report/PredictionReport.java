@@ -1,18 +1,19 @@
 package laidongs.lab04.report;
 
-import com.google.common.collect.Lists;
+
 import laidongs.lab04.model.report.DeductionRow;
 import laidongs.lab04.model.report.IncrementRow;
 import laidongs.lab04.model.report.PredictionRow;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PredictionReport extends Report {
 
     public List<PredictionRow> calculateData(List<IncrementRow> incrementRows, List<DeductionRow> deductionRows) {
 
-        List<PredictionRow> rows = Lists.newArrayList();
+        List<PredictionRow> rows = new ArrayList<PredictionRow>(); // Lists.newArrayList();
 
         for (int i = 0; i < incrementRows.size(); i++) {
             IncrementRow incRow = incrementRows.get(i);

@@ -1,18 +1,19 @@
 package laidongs.lab04.report;
 
-import com.google.common.collect.Lists;
+//import com.google.common.collect.Lists;
 import laidongs.lab04.model.SalaryInput;
 import laidongs.lab04.model.report.DeductionRow;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeductionReport extends Report {
 
     public List<DeductionRow> calculateData(SalaryInput input) {
-        List<DeductionRow> rows = Lists.newArrayList();
+        List<DeductionRow> rows = new ArrayList<DeductionRow>();// Lists.newArrayList();
 
         for (int i = 0; i < input.getYears(); i++) {
 

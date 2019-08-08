@@ -1,16 +1,17 @@
 package laidongs.lab04.report;
 
-import com.google.common.collect.Lists;
+
 import laidongs.lab04.model.SalaryInput;
 import laidongs.lab04.model.report.IncrementRow;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IncrementReport extends Report {
 
     public List<IncrementRow> calculateData(SalaryInput input) {
-        List<IncrementRow> rows = Lists.newArrayList();
+        List<IncrementRow> rows =  new ArrayList<IncrementRow>(); //Lists.newArrayList();
         for (int i = 0; i < input.getYears(); i++) {
 
             // increment
