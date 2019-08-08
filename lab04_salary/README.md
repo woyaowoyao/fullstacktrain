@@ -2,12 +2,12 @@
 ## Run
 
 git clone  https://github.com/woyaowoyao/fullstacktrain.git
-cd FSD/lab04_salary
+cd fullstacktrain/lab04_salary
 mvn clean package
 java -cp ./target/*.jar laidongs.lab04.SalaryLab04
-```
 
-## Sample output
+
+## result
 
 ```sh
 $ java -cp ./target/*.jar laidongs.lab04.SalaryLab04
