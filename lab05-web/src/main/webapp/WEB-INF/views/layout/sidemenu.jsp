@@ -12,14 +12,14 @@
 <nav class="bd-links" id="bd-docs-nav">
 	<div class="bd-toc-item active">
 		<a class="bd-toc-link" href="#">
-			Getting started </a>
+			Full Stack HII</a>
 
 		<ul class="nav bd-sidenav">
 			<li class="active bd-sidenav-active">
-			<a href="#"> Introduction </a></li>
 			
 			
-			<li><a href="${ctx }/register"> Register </a></li>
+			
+			<li><a href="${ctx }/register"> 注册 </a></li>
 			
 			<sec:authorize access="hasRole('ROLE_ANONYMOUS')">
 			    <li><a href="${ctx }/login"> Login </a></li>
@@ -27,7 +27,7 @@
 			
 			<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
 				<li><a href="${ctx }/logout"> Logout </a></li>
-				<li><a href="${ctx }/user/account"> Account Update </a></li>
+				<li><a href="${ctx }/user/account"> Profile </a></li>
 			</sec:authorize>
 		</ul>
 	</div>

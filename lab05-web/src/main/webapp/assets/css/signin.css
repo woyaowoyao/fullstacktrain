@@ -3,7 +3,7 @@ html {
 }
 
 .login-page {
-	background-image: url("/course-app/assets/images/pexels-photo-2310641.jpeg");
+	background-image: url("./assets/images/bg.png");
 	background-size: cover;
 	background-position: bottom;
 }

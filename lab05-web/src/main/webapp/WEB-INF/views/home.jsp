@@ -24,7 +24,7 @@
 			</div>
 
 			<main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
-			 This is the home page. Everyone can see it.
+			Full Stack Training
 			</main>
 		</div>
 

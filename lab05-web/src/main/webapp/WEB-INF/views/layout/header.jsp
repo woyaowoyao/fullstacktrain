@@ -14,13 +14,13 @@
       
       <sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
       <li class="nav-item">
-        <a class="nav-link <c:if test="${activeLink eq 'tutorials' }">active</c:if>" href="${ctx }/user/tutorials">Tutorials</a>
+        <a class="nav-link <c:if test="${activeLink eq 'tutorials' }">active</c:if>" href="${ctx }/user/tutorials">文档</a>
       </li>
       </sec:authorize>
       
       <sec:authorize access="hasRole('ROLE_ADMIN')">
       <li class="nav-item">
-          <a class="nav-link <c:if test="${activeLink eq 'admin' }">active</c:if>" href="${ctx }/admin/admin">Administration</a>
+          <a class="nav-link <c:if test="${activeLink eq 'admin' }">active</c:if>" href="${ctx }/admin/admin">管理员</a>
       </li>
       </sec:authorize>
       
@@ -30,13 +30,10 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Feedback
+        
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item" target="_blank" href="https://github.com/uniquejava/FSD/issues">Issues</a>
-        <a class="dropdown-item" target="_blank" href="https://github.com/uniquejava/FSD/pulls">Pull request</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" target="_blank" href="https://github.com/uniquejava/FSD">Source code</a>
+       
       </div>
     </li>
 
