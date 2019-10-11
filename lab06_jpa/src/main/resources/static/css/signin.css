@@ -3,7 +3,7 @@ html {
 }
 
 .login-page {
-	background-image: url("/course-app/assets/images/bg.png");
+	background-image: url("/lab06-app/images/bg.png");
 	background-size: cover;
 	background-position: bottom;
 }
@@ -63,6 +63,12 @@ a.btn-refresh {
 a.btn-refresh:hover {
 	color: #eee;
 }
+
+.checkbox {
+  margin-left: 20px;
+  color: #eee;
+}
+
 
 .alert-danger {
 	opacity: 0.8;
