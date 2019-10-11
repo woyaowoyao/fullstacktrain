@@ -64,6 +64,3 @@ https://lmonkiewicz.com/programming/get-noticed-2017/spring-boot-rest-request-va
 
 https://www.baeldung.com/global-error-handler-in-a-spring-rest-api
 
-## References
-
-1. https://stackoverflow.com/questions/24916894/serving-static-web-resources-in-spring-boot-spring-security-application
