@@ -17,8 +17,8 @@
 
 
 cd lab06-jpa
-mvn spring-boot:run -Dspring.profiles.active=dev
-```
+mvn spring-boot:run 
+
 
 1. Open in browser: http://localhost:8080/lab06-app/login
 2. Built-in users: `admin/admin` and `tomcat/tomcat`.

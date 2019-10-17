@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebController implements WebMvcConfigurer {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
+	@Autowired
 	private  CustomerRepository customerRepository;
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
