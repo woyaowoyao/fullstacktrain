@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>lab08</artifactId>
+	<artifactId>lab08-2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>lab8-1</name>
+	<name>lab8-2</name>
 	<description>A basic starter template using springboot, jpa data, thymeleaf and MVC</description>
 
 	<properties>
