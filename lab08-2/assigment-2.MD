@@ -18,9 +18,21 @@ Assigment-2
    
 6.Delete the “target” folder from the remote repository which was committed in step 4.7.
 	Create 	a new branch “welcomeapi” in the local repository.
+	git new branch
 	a.Make changes to the source code i.e. add a new url (/welcome) to the rest controller
+	change code
 	b.Now, push the change from local repository to remote repository in the branch “welcomeapi”
+	
+	git add assigment-2.MD
+	git commit -m "first commit"
+	git remote add origin https://github.com/woyaowoyao/fullstacktrain.git
+	git push -u origin master
+	
 	c.You must not push these changes to main branch in remote repository.
 	d.Locally, merge the changes done welcomeapi branch to main branch. 
+	local merge code 
 	e.Push the changes from local repository to remote repository.
+	
+	git push -u origin master
+	
 	f.Once the changes are merged and pushedto the remote copy of repository on GIT server, delete the branch welcomeapi.
