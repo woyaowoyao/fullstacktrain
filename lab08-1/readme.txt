@@ -19,8 +19,8 @@ A:
 mvn clean package
  c.What will be command to execute the jar which is created by above command? i.After executing the jar, you should be able to test the REST APIin any browser window.
 A:
-mvn spring-boot:run
-#java  -jar lab08-0.0.1-SNAPSHOT.jar 
+#mvn spring-boot:run
+java  -jar lab08-0.0.1-SNAPSHOT.jar 
 http://localhost:8080/lab08-0.0.1-SNAPSHOT/hello
  d.What will be command to clean all the compiled class files and jar files in target folder?
 A:

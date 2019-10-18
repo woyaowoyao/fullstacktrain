@@ -28,7 +28,6 @@ mvn clean
  e.Change POM.xml to create war executable in place of jar executable in the above project. Run the command to create .war executable
 A:
 mvn clean install
-
 http://localhost:8080/lab08-0.0.1-SNAPSHOT/hello
 
 
