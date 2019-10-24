@@ -1,0 +1,32 @@
+version: '3'
+services:
+  nginx:
+   container_name: FSD-nginx
+   image: nginx:1.13
+   restart: always
+   ports:
+   - 80:80
+   volumes:
+   - ./nginx/conf.d:/etc/nginx/conf.d
+   depends_on:
+   - app
+ 
+  mysql:
+   container_name: FSD-mysql
+   image: mysql/mysql-server:5.7
+   environment:
+    MYSQL_DATABASE: test
+    MYSQL_ROOT_PASSWORD: hellokoding
+    MYSQL_ROOT_HOST: '%'
+   ports:
+   - "3306:3306"
+   restart: always
+   
+  app:
+    image: laidongshi/lab09:latest
+    container_name: lab09
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
