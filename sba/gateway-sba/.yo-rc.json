@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.laidongs.sba.gateway"
+    },
+    "jhipsterVersion": "6.4.1",
+    "applicationType": "gateway",
+    "baseName": "gatewaysba",
+    "packageName": "com.laidongs.sba.gateway",
+    "packageFolder": "com/laidongs/sba/gateway",
+    "serverPort": "9050",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTg1OWFkMzg2Y2U5ZTBmYmEyMGIxYjJiNmJhMWQyNjkxYWM5MGJmYTlhMDU2NTU5YzhlM2Y2NjRlMmJlNDg2ZWQ2YzY1ZGIyYzQ2YjBmYjhkMzEzMzUzMDZkOWMzODQ0MzlhMmE1ZTRkZTU3OTI4ZjMyMjQzMWM4YTI2MzFlMjQ=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "cerulean",
+    "clientThemeVariant": "primary",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
