@@ -8,7 +8,7 @@
     "baseName": "gateway",
     "packageName": "com.ibm.sp.gateway",
     "packageFolder": "com/ibm/sp/gateway",
-    "serverPort": "9099",
+    "serverPort": "9059",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
@@ -25,13 +25,13 @@
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
-    "clientFramework": "Angular",
+    "clientFramework": "angularX",
     "clientTheme": "cerulean",
     "clientThemeVariant": "primary",
     "testFrameworks": [
       "gatling"
     ],
-    "jhiPrefix": "jhi",
+    "jhiPrefix": "sba",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [
